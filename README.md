@@ -1,57 +1,51 @@
-JcurveIQ Agent Run Panel
-A real-time, "agentic" dashboard built for financial analysts to monitor multi-agent research pipelines. This project demonstrates complex state management, parallel task orchestration, and clear information hierarchy.
+🚀 Agentic Research Panel | JcurveIQ
+Live Demo: https://agent-panel-woad.vercel.app/
 
-🚀 Quick Start
-Prerequisites
-Node.js (v18 or higher recommended)
+Author: Abhishek Singh Mahar
 
-npm or yarn
+A high-performance, real-time dashboard designed for financial analysts to monitor complex, multi-agent research pipelines. This project focuses on state-driven UI orchestration, managing parallel agent workflows, and maintaining a clear audit trail of AI "thoughts" and data synthesis.
 
-Installation
-Clone the repository:
+🛠 Tech Stack & Architecture
+React (Vite): Leveraging a lightweight, fast-loading frontend architecture.
+
+Tailwind CSS v4: Using the latest PostCSS engine for a modern, high-contrast "Dark Mode" financial interface.
+
+State Machine (useReducer): Centralized logic to handle complex agent lifecycles, including retries, parallel groupings, and strategic stops.
+
+Event Emitter Hooks: A custom simulation engine that replays backend event streams with realistic latency.
+
+🌟 Key Features
+Parallel Task Grouping: Intuitively groups agents working concurrently on the same research pod.
+
+Strategic Stop Handling: Real-time UI updates for tasks cancelled due to "Sufficient Data" (a key financial efficiency metric).
+
+Live Thought Trace: A dedicated console for monitoring agent reasoning without cluttering the primary task feed.
+
+Responsive Analysis: Dynamic grid layouts that adapt to the number of active agents in the pipeline.
+
+🧪 Simulation Scenarios
+The panel is pre-configured with two primary testing fixtures:
+
+Standard Success Path: Demonstrates task spawning, tool calls, failure-recovery (retries), and final synthesis.
+
+Early Termination Path: Showcases how the UI handles agents being stopped early when the coordinator determines enough data has been gathered.
+
+📂 Project Navigation
+src/store/agentReducer.js: The "brain" of the app; handles the complex logic of task transitions.
+
+src/components/AgentRunPanel.jsx: The primary UI orchestrator.
+
+DECISIONS.md: A detailed breakdown of the architectural choices made to handle under-specified requirements.
+
+🚀 How to Run Locally
+Clone & Enter:
 
 Bash
-git clone <your-repo-url>
-Install dependencies:
+git clone https://github.com/ThIsIsMaHaR/agent-panel.git
+cd agent-panel
+Install & Start:
 
 Bash
 npm install
-Start the development server:
-
-Bash
 npm run dev
-The application will be available at http://localhost:5173.
-
-🛠 Features & Tech Stack
-React (Vite): Optimized for fast development and small bundle sizes.
-
-Tailwind CSS: Custom-built UI components without external UI libraries.
-
-Mock Event Emitter: A custom hook that replays a JSON fixture sequence with realistic timing to simulate a live backend.
-
-Complex State Modeling: Uses useReducer to manage interleaved task updates, tool calls, and status transitions (retries, cancellations, etc.).
-
-🧪 Testing Fixtures
-To verify the system's robustness, the app supports two primary scenarios:
-
-Success Sequence: Covers task spawning, parallel grouping, task failures with successful retries, and strategic cancellations due to "sufficient data."
-
-Error Sequence: Demonstrates how the UI handles unrecoverable coordinator errors and partial run states.
-
-Note: Use the toggle buttons in the application header to switch between and trigger these sequences.
-
-📂 Project Structure
-/src/components: UI components including the AgentRunPanel and TaskCard.
-
-/src/store: State machine logic using the agentReducer.
-
-/src/mock: The event playback engine and JSON fixtures.
-
-DECISIONS.md: Documentation of architectural choices regarding ambiguous requirements.
-
-🔮 Future Improvements
-Persistence: Integrating with a backend or LocalStorage to keep run history after a page refresh.
-
-Enhanced Animations: Utilizing Framer Motion to make parallel task entries more fluid.
-
-Accessibility: Adding full ARIA labels and keyboard navigation for professional analyst workflows.
+Developed as part of the JcurveIQ Frontend Engineering assessment.
